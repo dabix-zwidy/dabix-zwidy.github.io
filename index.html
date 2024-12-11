@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Odtwarzacz wideo</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #f0f0f0;
+        }
+
+        #playButton {
+            padding: 20px 40px;
+            font-size: 20px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        #videoPlayer {
+            display: none;
+            width: 80%;
+            max-width: 800px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <button id="playButton">Śmiało, naciśnij ;)</button>
+
+    <video id="videoPlayer" controls>
+        <source src="dabix.mp4" type="video/mp4">
+        Twój przeglądarka nie obsługuje elementu wideo.
+    </video>
+
+    <script>
+        document.getElementById('playButton').addEventListener('click', function() {
+            // Ukrywanie przycisku
+            document.getElementById('playButton').style.display = 'none';
+            
+            // Pokazywanie odtwarzacza wideo
+            var video = document.getElementById('videoPlayer');
+            video.style.display = 'block';
+            
+            // Rozpoczęcie odtwarzania
+            video.play();
+        });
+    </script>
+
+</body>
+</html>
