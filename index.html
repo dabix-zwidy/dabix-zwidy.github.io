@@ -30,12 +30,23 @@
             width: 80%;
             max-width: 800px;
             margin-top: 20px;
+            animation: rotateAnimation 2s linear infinite; /* Zmniejszono czas trwania animacji do 2 sekund */
+        }
+
+        /* Animacja obracania */
+        @keyframes rotateAnimation {
+            0% {
+                transform: rotate(0deg);
+            }
+            100% {
+                transform: rotate(360deg);
+            }
         }
     </style>
 </head>
 <body>
 
-    <button id="playButton">Śmiało, naciśnij ;)</button>
+    <button id="playButton">Odtwórz film</button>
 
     <video id="videoPlayer" controls>
         <source src="dabix.mp4" type="video/mp4">
